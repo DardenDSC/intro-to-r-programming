@@ -28,7 +28,7 @@ library(lubridate)
 # reading in data --------------------------------------------------------------
 
 # Read the CSV (comma-seperated values) file called "song-data.csv" from our project folder
-# The dataset actually comes from a blog that someone wrote about analyzing their 
+# The dataset actually comes from a blog that Tamas Szilagyi wrote about analyzing his 
 # spotify listening history: http://tamaszilagyi.com/blog/analyzing-my-spotify-listening-history/
 
 # The command "read_csv()" will read the data and assign it to an object called "df_tracks"
