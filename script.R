@@ -34,7 +34,7 @@ library(lubridate)
 # The command "read_csv()" will read the data and assign it to an object called "df_tracks"
 # The " <- " operator means take the result from the right-hand side and put it into a 
 # variable by the name of what is on the left-hand side of the operator.
-df_tracks <- read_csv("song-data.csv")
+df_tracks <- read_csv("https://raw.githubusercontent.com/DardenDSC/intro-to-r-programming/master/song-data.csv")
 
 # an example where variable is not assigned (just printed to console) ----------
 
@@ -42,21 +42,9 @@ df_tracks <- read_csv("song-data.csv")
 # assignment operator, the result will just print it in the Console window.
 df_tracks
 
-# the origin of the data (its raw form) ----------------------------------------
-
-# The data from the Spotify API provides a more complex type of data called JSON (JavaScript Object notation)
-# data. In case you are interested That data can also be read into the R environment. 
-df_tracks_raw <- fromJSON("https://raw.githubusercontent.com/mtoto/mtoto.github.io/master/data/2017-06-02-spotifyR/spotify_tracks_2017-06-30.json")
-
-# The "head()" function lets you peak at only the first 6 rows of the data so that 
+# The "head()" function lets you peak at only the first couple rows of the data so that 
 # you aren't overwhelmed when the entire dataset is printed to the Console window.
-head(df_tracks_raw)
-
-# For now, let's work with the simpler "df_tracks" variable. You can remove the "df_tracks_raw" 
-# object from the R environment using the "rm()" command. Or you can just ignore that the 
-# variable even exists. If you run the code below it will remove it. It's better to keep your 
-# environment clear of objects you're not using. They take up your computer's RAM during the session.
-rm(df_tracks_raw)
+head(df_tracks, 2)
 
 
 # figuring out the rows and columns of a dataset -------------------------------

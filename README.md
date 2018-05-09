@@ -1,4 +1,4 @@
-# Intro To R Programming<img src="https://www.r-project.org/logo/Rlogo.png" width="200px" align="right" />
+# Intro To R Programming<img src="https://www.r-project.org/logo/Rlogo.png" width="220px" align="right" />
 A repository of containing one script ([`script.R`](script.R)) that is a guide to beginning 
 to code in the R programming language. The script covers how to read data, assign 
 data to variables, analyze data, and plot data all using a Spotify user's songs played 
@@ -15,12 +15,12 @@ history that is in [`song-data.csv`](song-data.csv).
 ### Following Along
 
 The best way to learn R is to try it out for yourself. After downloading the R and 
-RStudio software, open up RStudio and start pasting it to see what it does. For this 
+RStudio software, open up RStudio and start running the code to see what it does. For this 
 session: 
- - Download the R script, [`script.R`](script.R)
- - Download the data [`song-data.csv`](song-data.csv)
- - Open up RStudio, click File -> Open File then locate the script
- - Start by copy/pasting the code from the script into the R Console window and see what it does. 
+ - Open up RStudio, click File -> New File -> R Script
+ - Go to [`script.R`](script.R) and copy/paste all the code into your new, blank script
+ - Start running the code from the script to see what it does by clicking the "Run" 
+ button in top right of script
 
 Keep reading for more information on how to set up your computer with R and RStudio.
  
