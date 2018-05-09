@@ -13,7 +13,6 @@ history that is in [`song-data.csv`](song-data.csv).
  - [Source](#source)
  
 ### Following Along
-
 The best way to learn R is to try it out for yourself. After downloading the R and 
 RStudio software, open up RStudio and start running the code to see what it does. For this 
 session: 
