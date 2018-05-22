@@ -1,4 +1,11 @@
 
+# This script is available online at: 
+#   https://github.com/DardenDSC/intro-to-r-programming/blob/master/script.R
+
+# If you want to run the code below, then use the cursor to highlight the lines 
+# you would like to run and then press CRTL+ENTER or CMD+ENTER for Mac users.
+
+
 # how to install a package (only need to install packages once) ----------------
 
 # Run "install.packages("PACKAGE_NAME_HERE") to install an R package
@@ -19,9 +26,7 @@ install.packages('tidyverse')
 # for use to use during the session. 
 library(tidyverse)
 
-# Here we will also install and load other packages for making it easier to 
-# read, write, and manipulate JSON formatted data, along with date/time data
-library(jsonlite)
+# Here we will load another packages that makes it easier to manipulate date/time data
 library(lubridate)
 
 
@@ -36,15 +41,23 @@ library(lubridate)
 # variable by the name of what is on the left-hand side of the operator.
 df_tracks <- read_csv("https://raw.githubusercontent.com/DardenDSC/intro-to-r-programming/master/song-data.csv")
 
+
 # an example where variable is not assigned (just printed to console) ----------
 
 # You don't always have to assign data to a variable. If you don't include the 
 # assignment operator, the result will just print it in the Console window.
 df_tracks
 
-# The "head()" function lets you peak at only the first couple rows of the data so that 
-# you aren't overwhelmed when the entire dataset is printed to the Console window.
-head(df_tracks, 2)
+
+# writing out data -------------------------------------------------------------
+
+# It's great to read the data and have it in your R session, but what if you'd like 
+# to save the data for another time? You can save a CSV file to your computer by 
+# using the "write_csv()" command. This command takes 2 arguments: 
+#   1. The variable you'd like to write out
+#   2. The name of the file you'd like to create and store the data in.
+# Here we are saving the data in df_tracks to a file called "songs.csv"
+write_csv(df_tracks, "songs.csv")
 
 
 # figuring out the rows and columns of a dataset -------------------------------
@@ -59,20 +72,49 @@ ncol(df_tracks)
 # "dim(OBJECT_NAME_HERE)" will tell you the dimensions (rows and columns!)
 dim(df_tracks)
 
+# The "head()" function lets you peak at only the first couple rows of the data so that 
+# you aren't overwhelmed when the entire dataset is printed to the Console window.
+head(df_tracks, 2)
+
 
 # referencing specific data points using their indices -------------------------
 
 # Because R is typically based on rectangles which are a collection of rows and columns
 # you can reference specific parts of the rectangle using "indices". The indices are the 
 # row and column numbers that point to a specific value.
+#
 # For example, to reference the 1st row, 3rd column, you just need to put that information 
 # in square brackets separated by a comma next to the object
-df_tracks[1,2]
+df_tracks[1, 3]
+
+# If you'd like to reference just the first row, then omit the column index
+df_tracks[1, ]
+
+# If you'd like to reference just the fourth column, then omit the row index
+df_tracks[ , 4]
 
 # Rectangular data where the columns have names can be referenced using the dollar sign ("$").
 # For example, if you want the 1st observation in the "track_name" column, just put "[1]" on the
 # end of the object referencing the column name with a dollar sign, like this:
 df_tracks$track_name[1]
+
+# You can confirm this is the same as using the row-column indices.
+df_tracks[1, 2]
+ 
+# Why should I worry about how to pull pieces of data out of a data.frame? Let's 
+# say that you wanted to find the difference in duration between the first and 
+# second song in the dataset. You can pull out those two pieces of data and subtract 
+# to find the difference.
+
+first_song_duration <- df_tracks[1, 4]
+second_song_duration <- df_tracks[2, 4]
+second_song_duration - first_song_duration
+
+# You can confirm this difference by looking at the dataset.
+head(df_tracks, 2)
+
+# Assigning variables is really important in R because you can take many different 
+# data objects and perform operations on them to do even more analysis.
 
 
 # the different data structures in R -------------------------------------------
@@ -106,6 +148,15 @@ is.integer(y)
 is.logical(FALSE)
 is.logical("FALSE")
 is.character("FALSE")
+
+# Wait! How do we know about all these functions. You can Google them and see 
+# examples of other people's code which is a good step, but if you need a reminder 
+# on the definition of a function and you already know the name, then you can 
+# find the documentation by typing a question mark before the function name and 
+# running that in the console like this: 
+?as.integer
+
+# We will talk more about using the question mark help further on in this script.
 
 
 # working with missing data in R -----------------------------------------------
@@ -175,7 +226,7 @@ df_tracks %>%
 # exactly what we are looking for. Here is the code
 df_tracks %>%
   group_by(type) %>% 
-  summarize(avg_duration_secs = mean(duration_ms/1000, na.rm=TRUE)) %>%
+  summarize(avg_duration_secs = mean(duration_ms / 1000, na.rm=TRUE)) %>%
   mutate(avg_duration_mins = avg_duration_secs / 60)
 
 
@@ -347,6 +398,3 @@ ggplot(data=summary_data, mapping=aes(x=date, y=songs_played)) +
 # that describes for beginners how to approach data science using R. The book 
 # is easy to use and reference. I highly recommend you read it if you intend on 
 # learning more on how to code in R. The link is: http://r4ds.had.co.nz
-
-# this script is also available online at: 
-#   https://github.com/DardenDSC/intro-to-r-programming/blob/master/script.R
