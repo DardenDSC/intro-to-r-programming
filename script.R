@@ -191,7 +191,7 @@ mean(is.na(df_tracks$playlist_url))
 
 # This is all very fun exploring different columns, but what about some more complex 
 # analyses? Let's say you wanted to determine if the duration of songs is longer or 
-# short depending on if it is played from a playlist or an album on Spotify. 
+# shorter depending on if it is played from a playlist or an album on Spotify. 
 # R has the tools to easily answer this question! Let's first take a look at the syntax. 
 
 
@@ -271,12 +271,11 @@ my_avg == xm
 # - How to load data using the "read_csv()" function
 # - How to assign data to a variable using the assignment operator (" <- "). In this case we called it "df_tracks"
 # - How to peak at the first 6 rows of a dataset using the "head()" function
-# - Ho to remove a variable using the "rm()" function
+# - How to remove a variable using the "rm()" function
 # - The different data types in R: character, integer, numeric, logical
 # - The different data structures in R: vector, list, matrix, data.frame/tibble
 # - How to check the data type of a variable using functions like: "is.vector()", "is.list()", "is.numeric()", "is.data.frame()"
 # - How to reference specific data points in a data.frame using indices my_data_frame[1,1] or my_data_frame$column[1]
-# - How to assign a value to a variable or just print it to the console window
 # - How to pull up the Help documentation using the question mark and function name (e.g. ?mean)
 # - How to count rows, columns, dimensions of dataset using "nrow()", "ncol()", or "dim()"
 # - How to count the missing values in a column using "sum(is.na())"
@@ -301,7 +300,7 @@ df_tracks %>%
 
 # adding more elements to a histogram ------------------------------------------
 
-# What's interesting is there is a peak around 8am and 8pm. The chart does not look 
+# What's interesting is there is a peak around 8am and 7pm. The chart does not look 
 # very professional, but it is easy to add new trendlines, axis labels, title, etc. 
 # If you notice in the code above there is a plus sign ("+") after the ggplot() function. 
 # This plus sign only works with ggplots and acts like adding another layer. In the 
