@@ -16,7 +16,7 @@ history that is in [`song-data.csv`](song-data.csv).
 The best way to learn R is to try it out for yourself. After downloading the R and 
 RStudio software, open up RStudio and start running the code to see what it does. For this 
 session: 
- - Open up RStudio, click File -> New File -> R Script
+ - Open up RStudio, click `File -> New File -> R Script`
  - Go to [`script.R`](script.R) and copy/paste all the code into your new, blank script
  - Start running the code from the script to see what it does by clicking the "Run" 
  button in top right of script
@@ -25,7 +25,7 @@ Keep reading for more information on how to set up your computer with R and RStu
  
 ### Installing R and RStudio
 First, you can install R by going to https://cloud.r-project.org. You should see 
-the options to download for Linux, Mac, or Windows. Follow the command prompts on your 
+the options to download for Windows, Mac and Linux. Follow the command prompts on your 
 screen just like you would install any other software.
 
 Next, you should install RStudio. Wait, Why should I install RStudio too?  
